@@ -2,6 +2,6 @@ FROM postgres:12
 
 COPY ./docker-entrypoint-initdb.d /docker-entrypoint-initdb.d
 
-EXPOSE 5432
+EXPOSE 80
 
-CMD ["postgres"]
+CMD ["postgres", "-p 80"]

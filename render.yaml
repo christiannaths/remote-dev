@@ -1,0 +1,16 @@
+services:
+  # A Docker web service
+  - type: web
+    name: postgresql-dev
+    env: docker
+    dockerfilePath: ./postgresql/Dockerfile
+    dockerContext: ./postgresql
+    repo: https://github.com/christiannaths/remote-dev
+    plan: starter
+    # branch: master # optional (uses repo default)
+    healthCheckPath: /
+    envVars:
+      - key: POSTGRES_PASSWORD
+        generateValue: true
+      # - key: SOME_SECRET
+      #   sync: false
